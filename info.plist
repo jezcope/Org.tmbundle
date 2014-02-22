@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>contactEmailRot13</key>
+	<string>w.pbcr@renzoyre.pb.hx</string>
+	<key>contactName</key>
+	<string>Jez Cope</string>
+	<key>description</key>
+	<string>Very basic bundle for syntax highlighting Emacs org-mode files.</string>
+	<key>name</key>
+	<string>Org</string>
+	<key>uuid</key>
+	<string>32A2F2CC-B464-46E2-A263-38CD939DAB04</string>
+</dict>
+</plist>

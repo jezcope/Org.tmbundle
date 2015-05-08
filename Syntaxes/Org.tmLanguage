@@ -12,36 +12,40 @@
 	<key>patterns</key>
 	<array>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.heading.orgmode</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>markup.heading.orgmode</string>
+				</dict>
+			</dict>
 			<key>comment</key>
 			<string>Outline headings</string>
 			<key>match</key>
-			<string>^\*+ [^\[\]:\n]*</string>
+			<string>^(\*+) ([^\[\]:\n]*)</string>
 			<key>name</key>
-			<string>markup.heading.orgmode</string>
+			<string>meta.heading.orgmode</string>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>/[^/]+/</string>
+			<key>begin</key>
+			<string>^\s*[-+]</string>
+			<key>end</key>
+			<string>$</string>
 			<key>name</key>
-			<string>markup.italic.orgmode</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\*[^*]+\*</string>
-			<key>name</key>
-			<string>markup.bold.orgmode</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>_[^_]+_</string>
-			<key>name</key>
-			<string>markup.underline.orgmode</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>^\s*[-+]\s.+$</string>
-			<key>name</key>
-			<string>markup.list.orgmode</string>
+			<string>meta.list.orgmode</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#inline</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -116,9 +120,40 @@
 			<key>name</key>
 			<string>markup.comment.pragma.orgmode</string>
 		</dict>
+		<dict>
+			<key>include</key>
+			<string>#inline</string>
+		</dict>
 	</array>
+	<key>repository</key>
+	<dict>
+		<key>inline</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>/[^/]+/</string>
+					<key>name</key>
+					<string>markup.italic.orgmode</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\*[^*]+\*</string>
+					<key>name</key>
+					<string>markup.bold.orgmode</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>_[^_]+_</string>
+					<key>name</key>
+					<string>markup.underline.orgmode</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
 	<key>scopeName</key>
-	<string>source.orgmode</string>
+	<string>text.orgmode</string>
 	<key>uuid</key>
 	<string>e4fb86ca-d96b-4094-ac47-d14dbae2d088</string>
 </dict>

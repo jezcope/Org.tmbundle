@@ -1,22 +1,22 @@
 # [PackageDev] target_format: plist, ext: tmLanguage
 ---
 name: orgmode
-scopeName: source.orgmode
+scopeName: text.orgmode
 fileTypes: [org, tasks]
 uuid: e4fb86ca-d96b-4094-ac47-d14dbae2d088
 
 patterns:
 - comment: Outline headings
-  name: markup.heading.orgmode
-  match: '^\*+ [^\[\]:\n]*'
-- name: markup.italic.orgmode
-  match: '/[^/]+/'
-- name: markup.bold.orgmode
-  match: '\*[^*]+\*'
-- name: markup.underline.orgmode
-  match: '_[^_]+_'
-- name: markup.list.orgmode
-  match: '^\s*[-+]\s.+$'
+  name: meta.heading.orgmode
+  match: '^(\*+) ([^\[\]:\n]*)'
+  captures:
+    '1': {name: keyword.operator.heading.orgmode}
+    '2': {name: markup.heading.orgmode}
+- name: meta.list.orgmode
+  begin: '^\s*[-+]'
+  end: '$'
+  patterns:
+  - include: '#inline'
 - name: markup.quote.orgmode
   begin: '^#\+(BEGIN_QUOTE)$'
   beginCaptures:
@@ -38,6 +38,16 @@ patterns:
   captures:
     '1': {name: keyword.control.pragma.orgmode}
     '2': {name: string.unquoted.pragma.orgmode}
+- include: '#inline'
+repository:
+  inline:
+    patterns:
+    - name: markup.italic.orgmode
+      match: '/[^/]+/'
+    - name: markup.bold.orgmode
+      match: '\*[^*]+\*'
+    - name: markup.underline.orgmode
+      match: '_[^_]+_'
 ...
 
 # Local Variables:

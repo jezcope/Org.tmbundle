@@ -17,7 +17,8 @@ Please use/abuse/modify it under the terms of the [[http://choosealicense.com/li
 - [X] Comments
 - [X] Quote (#+BEGIN/END_QUOTE)
 - [X] Bullet lists
+- [X] LaTeX blocks
 - [ ] Source code blocks
-- [ ] Property drawers
-- [ ] File-level options & metadata
-- [ ] Inline elements within block elements
+- [X] Property drawers
+- [X] File-level options & metadata
+- [X] Inline elements within block elements

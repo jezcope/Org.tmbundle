@@ -16,7 +16,7 @@ patterns:
   begin: '^\s*[-+]'
   end: '$'
   patterns:
-  - include: '#inline'
+  - include: '#list-inline'
 - name: markup.quote.orgmode
   begin: '^#\+(BEGIN_QUOTE)$'
   beginCaptures:
@@ -48,6 +48,11 @@ repository:
       match: '\*[^*]+\*'
     - name: markup.underline.orgmode
       match: '_[^_]+_'
+  list-inline:
+    patterns:
+    - name: keyword.operator.checkbox.orgmode
+      match: '\[[ -X]\]'
+    - include: '#inline'
 ...
 
 # Local Variables:

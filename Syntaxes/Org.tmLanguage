@@ -43,7 +43,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#inline</string>
+					<string>#list-inline</string>
 				</dict>
 			</array>
 		</dict>
@@ -148,6 +148,22 @@
 					<string>_[^_]+_</string>
 					<key>name</key>
 					<string>markup.underline.orgmode</string>
+				</dict>
+			</array>
+		</dict>
+		<key>list-inline</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\[[ -X]\]</string>
+					<key>name</key>
+					<string>keyword.operator.checkbox.orgmode</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#inline</string>
 				</dict>
 			</array>
 		</dict>

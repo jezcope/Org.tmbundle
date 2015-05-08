@@ -79,7 +79,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^:([^:]+):$</string>
+			<string>^:(PROPERTIES):$</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -99,7 +99,15 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>markup.comment.drawer.orgmode</string>
+			<string>meta.drawer.properties.orgmode</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#properties</string>
+				</dict>
+			</array>
+		</dict>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -164,6 +172,31 @@
 				<dict>
 					<key>include</key>
 					<string>#inline</string>
+				</dict>
+			</array>
+		</dict>
+		<key>properties</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.control.property.orgmode</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>string.unquoted.propval.orgmode</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^:([A-Za-z_]+):\s(.*)$</string>
+					<key>name</key>
+					<string>meta.property.orgmode</string>
 				</dict>
 			</array>
 		</dict>

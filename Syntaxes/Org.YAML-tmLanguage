@@ -26,13 +26,15 @@ patterns:
     '1': {name: keyword.control.block.orgmode}
 - name: markup.comment.orgmode
   match: '^#[^+].*$'
-- name: markup.comment.drawer.orgmode
-  begin: '^:([^:]+):$'
+- name: meta.drawer.properties.orgmode
+  begin: '^:(PROPERTIES):$'
+  end: '^:(END):$'
   beginCaptures:
     '1': {name: keyword.control.drawer.orgmode}
-  end: '^:(END):$'
   endCaptures:
     '1': {name: keyword.control.drawer.orgmode}
+  patterns:
+  - include: '#properties'
 - name: markup.comment.pragma.orgmode
   match: '^#\+([a-zA-Z_-]+): ?(.*)$'
   captures:
@@ -53,6 +55,13 @@ repository:
     - name: keyword.operator.checkbox.orgmode
       match: '\[[ -X]\]'
     - include: '#inline'
+  properties:
+    patterns:
+    - name: meta.property.orgmode
+      match: '^:([A-Za-z_]+):\s(.*)$'
+      captures:
+        '1': {name: keyword.control.property.orgmode}
+        '2': {name: string.unquoted.propval.orgmode}
 ...
 
 # Local Variables:

@@ -35,6 +35,15 @@ patterns:
     '1': {name: keyword.control.drawer.orgmode}
   patterns:
   - include: '#properties'
+- name: meta.block.latex.orgmode
+  begin: '#\+(BEGIN_LaTeX)$'
+  end: '#\+(END_LaTeX)$'
+  beginCaptures:
+    '1': {name: keyword.control.block.orgmode}
+  endCaptures:
+    '1': {name: keyword.control.block.orgmode}
+  patterns:
+  - include: text.tex.latex
 - name: markup.comment.pragma.orgmode
   match: '^#\+([a-zA-Z_-]+): ?(.*)$'
   captures:

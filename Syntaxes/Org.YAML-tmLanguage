@@ -1,0 +1,29 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: orgmode
+scopeName: source.orgmode
+fileTypes: [org, tasks]
+uuid: e4fb86ca-d96b-4094-ac47-d14dbae2d088
+
+patterns:
+- comment: Outline headings
+  name: markup.heading.orgmode
+  match: '^\*+ [^\[\]:\n]*'
+- name: markup.italic.orgmode
+  match: '/[^/]+/'
+- name: markup.bold.orgmode
+  match: '\*[^*]+\*'
+- name: markup.underline.orgmode
+  match: '_[^_]+_'
+- name: markup.list.orgmode
+  match: '^\s*[-+]\s.+$'
+- name: markup.quote.orgmode
+  begin: '^#\+BEGIN_QUOTE$'
+  end: '^#\+END_QUOTE$'
+- name: markup.comment.orgmode
+  match: '^#[^+].*$'
+...
+
+# Local Variables:
+# mode: yaml
+# End:

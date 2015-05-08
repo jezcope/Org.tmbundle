@@ -45,9 +45,25 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^#\+BEGIN_QUOTE$</string>
+			<string>^#\+(BEGIN_QUOTE)$</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.block.orgmode</string>
+				</dict>
+			</dict>
 			<key>end</key>
-			<string>^#\+END_QUOTE$</string>
+			<string>^#\+(END_QUOTE)$</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.block.orgmode</string>
+				</dict>
+			</dict>
 			<key>name</key>
 			<string>markup.quote.orgmode</string>
 		</dict>
@@ -56,6 +72,49 @@
 			<string>^#[^+].*$</string>
 			<key>name</key>
 			<string>markup.comment.orgmode</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>^:([^:]+):$</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.drawer.orgmode</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>^:(END):$</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.drawer.orgmode</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>markup.comment.drawer.orgmode</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.pragma.orgmode</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>string.unquoted.pragma.orgmode</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^#\+([a-zA-Z_-]+): ?(.*)$</string>
+			<key>name</key>
+			<string>markup.comment.pragma.orgmode</string>
 		</dict>
 	</array>
 	<key>scopeName</key>

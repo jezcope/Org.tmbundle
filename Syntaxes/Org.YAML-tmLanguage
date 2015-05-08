@@ -18,10 +18,26 @@ patterns:
 - name: markup.list.orgmode
   match: '^\s*[-+]\s.+$'
 - name: markup.quote.orgmode
-  begin: '^#\+BEGIN_QUOTE$'
-  end: '^#\+END_QUOTE$'
+  begin: '^#\+(BEGIN_QUOTE)$'
+  beginCaptures:
+    '1': {name: keyword.control.block.orgmode}
+  end: '^#\+(END_QUOTE)$'
+  endCaptures:
+    '1': {name: keyword.control.block.orgmode}
 - name: markup.comment.orgmode
   match: '^#[^+].*$'
+- name: markup.comment.drawer.orgmode
+  begin: '^:([^:]+):$'
+  beginCaptures:
+    '1': {name: keyword.control.drawer.orgmode}
+  end: '^:(END):$'
+  endCaptures:
+    '1': {name: keyword.control.drawer.orgmode}
+- name: markup.comment.pragma.orgmode
+  match: '^#\+([a-zA-Z_-]+): ?(.*)$'
+  captures:
+    '1': {name: keyword.control.pragma.orgmode}
+    '2': {name: string.unquoted.pragma.orgmode}
 ...
 
 # Local Variables:

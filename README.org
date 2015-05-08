@@ -1,5 +1,23 @@
-* Org.tmbundle
+* org-sublime
 
-This is a basic TextMate bundle for [[http://orgmode.org/][Emacs org-mode]] files. I created it mostly so that I can get syntax highlighting for my org-mode files in [[http://www.textasticapp.com/][Textastic for iOS]].
+This is a /very/ basic TextMate/Sublime Text syntax for [[http://orgmode.org/][Emacs org-mode]] files. I created it mostly so that I can get syntax highlighting for my org-mode files in [[http://www.textasticapp.com/][Textastic for iOS]].
+
+It started life as a TextMate =.tmbundle= but I'm now using Sublime Text to test/develop it.
 
 Please use/abuse/modify it under the terms of the [[http://choosealicense.com/licenses/bsd/][BSD 2-clause license]].
+
+** Todo list
+
+- [X] Headings
+- [X] *Bold*
+- [X] /Italics/
+- [X] _Underline_
+- [ ] ~Code~
+- [ ] =Verbatim=
+- [X] Comments
+- [X] Quote (#+BEGIN/END_QUOTE)
+- [X] Bullet lists
+- [ ] Source code blocks
+- [ ] Property drawers
+- [ ] File-level options & metadata
+- [ ] Inline elements within block elements

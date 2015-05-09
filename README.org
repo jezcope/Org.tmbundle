@@ -24,6 +24,8 @@ Please use/abuse/modify it under the terms of the [[http://choosealicense.com/li
 - [X] LaTeX blocks
 - [X] HTML blocks
 - [X] Links
+- [X] Bare URLs
+- [ ] Footnotes
 - [X] Source code blocks
   - [X] Generic
   - [X] Ruby

@@ -151,6 +151,8 @@ repository:
       captures:
         '1': {name: markup.underline.link.orgmode}
         '2': {name: string.other.link.orgmode}
+    - name: markup.underline.url.orgmode
+      match: '(?:http|ftp)s?:\/\/\S+'
   heading-inline:
     patterns:
     - name: meta.keyword.orgmode

@@ -536,6 +536,12 @@
 					<key>name</key>
 					<string>meta.link.orgmode</string>
 				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?:http|ftp)s?:\/\/\S+</string>
+					<key>name</key>
+					<string>markup.underline.url.orgmode</string>
+				</dict>
 			</array>
 		</dict>
 		<key>list-inline</key>

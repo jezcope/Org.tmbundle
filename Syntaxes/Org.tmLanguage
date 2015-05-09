@@ -158,6 +158,30 @@
 		</dict>
 		<dict>
 			<key>begin</key>
+			<string>^:(.+):$</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.drawer.orgmode</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>^:(END):$</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.drawer.orgmode</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.drawer.other.orgmode</string>
+		</dict>
+		<dict>
+			<key>begin</key>
 			<string>#\+(BEGIN_LaTeX)$</string>
 			<key>beginCaptures</key>
 			<dict>

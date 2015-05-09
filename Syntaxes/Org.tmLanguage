@@ -97,7 +97,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^#\+(BEGIN_QUOTE)$</string>
+			<string>^#\+(BEGIN_(QUOTE|VERSE|CENTER))$</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -107,7 +107,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>^#\+(END_QUOTE)$</string>
+			<string>^#\+(END_\2)$</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>

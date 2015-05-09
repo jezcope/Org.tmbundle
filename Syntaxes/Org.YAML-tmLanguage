@@ -33,10 +33,10 @@ patterns:
   patterns:
   - include: '#list-inline'
 - name: markup.quote.orgmode
-  begin: '^#\+(BEGIN_QUOTE)$'
+  begin: '^#\+(BEGIN_(QUOTE|VERSE|CENTER))$'
   beginCaptures:
     '1': {name: keyword.control.block.orgmode}
-  end: '^#\+(END_QUOTE)$'
+  end: '^#\+(END_\2)$'
   endCaptures:
     '1': {name: keyword.control.block.orgmode}
 - name: markup.comment.orgmode

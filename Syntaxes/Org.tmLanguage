@@ -189,6 +189,37 @@
 		</dict>
 		<dict>
 			<key>begin</key>
+			<string>#\+(BEGIN_HTML)$</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.block.orgmode</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>#\+(END_HTML)$</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.block.orgmode</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.block.html.orgmode</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>text.html.basic</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
 			<string>#\+(BEGIN_SRC)\s+(python)\s*(.*)$</string>
 			<key>beginCaptures</key>
 			<dict>

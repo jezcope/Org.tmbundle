@@ -59,6 +59,15 @@ patterns:
     '1': {name: keyword.control.block.orgmode}
   patterns:
   - include: text.tex.latex
+- name: meta.block.html.orgmode
+  begin: '#\+(BEGIN_HTML)$'
+  end: '#\+(END_HTML)$'
+  beginCaptures:
+    '1': {name: keyword.control.block.orgmode}
+  endCaptures:
+    '1': {name: keyword.control.block.orgmode}
+  patterns:
+  - include: text.html.basic
 - name: meta.block.source.python.orgmode
   begin: '#\+(BEGIN_SRC)\s+(python)\s*(.*)$'
   end: '#\+(END_SRC)$'

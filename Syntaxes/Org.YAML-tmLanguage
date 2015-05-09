@@ -15,8 +15,18 @@ patterns:
     '1': {name: keyword.operator.heading.orgmode}
   patterns:
   - include: '#heading-inline'
-- name: meta.list.orgmode
-  begin: '^\s*[-+]'
+- name: meta.list.definition.orgmode
+  begin: '^\s*([-+])\s+(.*?)\s+::'
+  end: '$'
+  beginCaptures:
+    '1': {name: keyword.operator.list.orgmode}
+    '2': {name: markup.bold.definition.orgmode}
+  patterns:
+  - include: '#inline'
+- name: meta.list.plain.orgmode
+  begin: '^\s*([-+]|\d+[).])'
+  beginCaptures:
+    '1': {name: keyword.operator.list.orgmode}
   end: '$'
   patterns:
   - include: '#list-inline'

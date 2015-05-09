@@ -17,10 +17,10 @@ Please use/abuse/modify it under the terms of the [[http://choosealicense.com/li
 - [X] =Verbatim=
 - [X] Comments
 - [X] Quote (#+BEGIN/END_QUOTE)
-- [-] Lists
+- [X] Lists
   - [X] Unordered
-  - [ ] Ordered
-  - [ ] Definition
+  - [X] Ordered
+  - [X] Definition
 - [X] LaTeX blocks
 - [X] Links
 - [X] Source code blocks

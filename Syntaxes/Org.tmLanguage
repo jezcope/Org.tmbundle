@@ -40,11 +40,47 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^\s*[-+]</string>
+			<string>^\s*([-+])\s+(.*?)\s+::</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.list.orgmode</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>markup.bold.definitiol.orgmode</string>
+				</dict>
+			</dict>
 			<key>end</key>
 			<string>$</string>
 			<key>name</key>
-			<string>meta.list.orgmode</string>
+			<string>meta.list.definition.orgmode</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#inline</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>^\s*([-+]|\d+[).])</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.list.orgmode</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>$</string>
+			<key>name</key>
+			<string>meta.list.plain.orgmode</string>
 			<key>patterns</key>
 			<array>
 				<dict>

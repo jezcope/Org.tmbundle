@@ -18,7 +18,7 @@ patterns:
 - name: meta.separator.orgmode
   match: '^-{5,}$'
 - name: meta.list.definition.orgmode
-  begin: '^\s*([-+])\s+(.*?)\s+::'
+  begin: '^\s*([-+]|\s+\*)\s+(.*?)\s+::'
   end: '$'
   beginCaptures:
     '1': {name: keyword.operator.list.orgmode}
@@ -26,7 +26,7 @@ patterns:
   patterns:
   - include: '#inline'
 - name: meta.list.plain.orgmode
-  begin: '^\s*([-+]|\d+[).])'
+  begin: '^\s*?([-+]|\s+\*|\d+[).])'
   beginCaptures:
     '1': {name: keyword.operator.list.orgmode}
   end: '$'

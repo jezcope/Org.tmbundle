@@ -46,7 +46,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^\s*([-+])\s+(.*?)\s+::</string>
+			<string>^\s*([-+]|\s+\*)\s+(.*?)\s+::</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -74,7 +74,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^\s*([-+]|\d+[).])</string>
+			<string>^\s*?([-+]|\s+\*|\d+[).])</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>

@@ -44,6 +44,48 @@ patterns:
     '1': {name: keyword.control.block.orgmode}
   patterns:
   - include: text.tex.latex
+- name: meta.block.source.python.orgmode
+  begin: '#\+(BEGIN_SRC)\s+(python)\s*(.*)$'
+  end: '#\+(END_SRC)$'
+  beginCaptures:
+    '1': {name: keyword.control.block.orgmode}
+    '2': {name: constant.other.language.orgmode}
+    '3': {name: string.other.header-args.orgmode}
+  endCaptures:
+    '1': {name: keyword.control.block.orgmode}
+  patterns:
+  - include: source.python
+- name: meta.block.source.ruby.orgmode
+  begin: '#\+(BEGIN_SRC)\s+(ruby)\s*(.*)$'
+  end: '#\+(END_SRC)$'
+  beginCaptures:
+    '1': {name: keyword.control.block.orgmode}
+    '2': {name: constant.other.language.orgmode}
+    '3': {name: string.other.header-args.orgmode}
+  endCaptures:
+    '1': {name: keyword.control.block.orgmode}
+  patterns:
+  - include: source.ruby
+- name: meta.block.source.lisp.orgmode
+  begin: '#\+(BEGIN_SRC)\s+((?:emacs-)?lisp)\s*(.*)$'
+  end: '#\+(END_SRC)$'
+  beginCaptures:
+    '1': {name: keyword.control.block.orgmode}
+    '2': {name: constant.other.language.orgmode}
+    '3': {name: string.other.header-args.orgmode}
+  endCaptures:
+    '1': {name: keyword.control.block.orgmode}
+  patterns:
+  - include: source.lisp
+- name: meta.block.source.other.orgmode
+  begin: '#\+(BEGIN_SRC)(?:\s+([\w-]+)?\s*(.*))?$'
+  end: '#\+(END_SRC)$'
+  beginCaptures:
+    '1': {name: keyword.control.block.orgmode}
+    '2': {name: constant.other.language.orgmode}
+    '3': {name: string.other.header-args.orgmode}
+  endCaptures:
+    '1': {name: keyword.control.block.orgmode}
 - name: meta.pragma.options.orgmode
   begin: '#\+(OPTIONS):'
   end: '$'

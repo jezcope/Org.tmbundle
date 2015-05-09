@@ -147,7 +147,7 @@ repository:
     - name: markup.raw.inline.orgmode
       match: '(?<=^|\s)([~=]).+?\1(?=$|\s)'
     - name: meta.link.orgmode
-      match: '\[\[([^\]]*)\]\[([^\]]*)\]\]'
+      match: '\[(?:\[([^\]]*)\])?\[([^\]]*)\]\]'
       captures:
         '1': {name: markup.underline.link.orgmode}
         '2': {name: string.other.link.orgmode}

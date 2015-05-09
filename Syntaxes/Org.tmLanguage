@@ -12,25 +12,31 @@
 	<key>patterns</key>
 	<array>
 		<dict>
-			<key>captures</key>
+			<key>begin</key>
+			<string>^((?=\*+))</string>
+			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>keyword.operator.heading.orgmode</string>
 				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>markup.heading.orgmode</string>
-				</dict>
 			</dict>
 			<key>comment</key>
 			<string>Outline headings</string>
-			<key>match</key>
-			<string>^(\*+) ([^\[\]:\n]*)</string>
+			<key>contentName</key>
+			<string>markup.heading.orgmode</string>
+			<key>end</key>
+			<string>$</string>
 			<key>name</key>
 			<string>meta.heading.orgmode</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#heading-inline</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -362,6 +368,30 @@
 	</array>
 	<key>repository</key>
 	<dict>
+		<key>heading-inline</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>string.quoted.keyword.orgmode</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>:([^:]*)(?=:)</string>
+					<key>name</key>
+					<string>meta.keyword.orgmode</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#inline</string>
+				</dict>
+			</array>
+		</dict>
 		<key>inline</key>
 		<dict>
 			<key>patterns</key>

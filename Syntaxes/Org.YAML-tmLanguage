@@ -8,10 +8,13 @@ uuid: e4fb86ca-d96b-4094-ac47-d14dbae2d088
 patterns:
 - comment: Outline headings
   name: meta.heading.orgmode
-  match: '^(\*+) ([^\[\]:\n]*)'
-  captures:
+  contentName: markup.heading.orgmode
+  begin: '^((?=\*+))'
+  end: '$'
+  beginCaptures:
     '1': {name: keyword.operator.heading.orgmode}
-    '2': {name: markup.heading.orgmode}
+  patterns:
+  - include: '#heading-inline'
 - name: meta.list.orgmode
   begin: '^\s*[-+]'
   end: '$'
@@ -120,6 +123,13 @@ repository:
       captures:
         '1': {name: markup.underline.link.orgmode}
         '2': {name: string.other.link.orgmode}
+  heading-inline:
+    patterns:
+    - name: meta.keyword.orgmode
+      match: ':([^:]*)(?=:)'
+      captures:
+        '1': {name: string.quoted.keyword.orgmode}
+    - include: '#inline'
   list-inline:
     patterns:
     - name: keyword.operator.checkbox.orgmode

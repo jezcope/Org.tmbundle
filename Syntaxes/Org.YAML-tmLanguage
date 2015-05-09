@@ -153,13 +153,13 @@ repository:
   inline:
     patterns:
     - name: markup.italic.orgmode
-      match: '(?<=^|\s)/[^/]+/(?=$|\s)'
+      match: '(?<=^|[.,:;\s])/[^/]+/(?=$|[.,:;\s])'
     - name: markup.bold.orgmode
-      match: '(?<=^|\s)\*[^*]+\*(?=$|\s)'
+      match: '(?<=^|[.,:;\s])\*[^*]+\*(?=$|[.,:;\s])'
     - name: markup.underline.orgmode
-      match: '(?<=^|\s)_[^_]+_(?=$|\s)'
+      match: '(?<=^|[.,:;\s])_[^_]+_(?=$|[.,:;\s])'
     - name: markup.raw.inline.orgmode
-      match: '(?<=^|\s)([~=]).+?\1(?=$|\s)'
+      match: '(?<=^|[.,:;\s])([~=]).+?\1(?=$|[.,:;\s])'
     - name: meta.link.orgmode
       match: '\[(?:\[([^\]]*)\])?\[([^\]]*)\]\]'
       captures:

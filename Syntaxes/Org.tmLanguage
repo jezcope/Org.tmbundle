@@ -13,13 +13,23 @@
 	<array>
 		<dict>
 			<key>begin</key>
-			<string>^((?=\*+))</string>
+			<string>^((\*+)\s*([A-Z_]{2,})?\s+)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
+					<string>markup.heading.orgmode</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
 					<string>keyword.operator.heading.orgmode</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.todo.orgmode</string>
 				</dict>
 			</dict>
 			<key>comment</key>

@@ -9,10 +9,12 @@ patterns:
 - comment: Outline headings
   name: meta.heading.orgmode
   contentName: markup.heading.orgmode
-  begin: '^((?=\*+))'
+  begin: '^((\*+)\s*([A-Z_]{2,})?\s+)'
   end: '$'
   beginCaptures:
-    '1': {name: keyword.operator.heading.orgmode}
+    '1': {name: markup.heading.orgmode}
+    '2': {name: keyword.operator.heading.orgmode}
+    '3': {name: entity.name.tag.todo.orgmode}
   patterns:
   - include: '#heading-inline'
 - name: meta.separator.orgmode

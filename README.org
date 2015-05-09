@@ -10,6 +10,7 @@ Please use/abuse/modify it under the terms of the [[http://choosealicense.com/li
 
 - [X] Headings
 - [X] Keywords in headings
+- [X] TODO tags in headings
 - [X] *Bold*
 - [X] /Italics/
 - [X] _Underline_

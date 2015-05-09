@@ -264,7 +264,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>#\+(BEGIN_SRC)(?:\s+([\w-]+)?\s*(.*))?$</string>
+			<string>#\+(BEGIN_(SRC|EXAMPLE))(?:\s+([\w-]+)?\s*(.*))?$</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -272,19 +272,21 @@
 					<key>name</key>
 					<string>keyword.control.block.orgmode</string>
 				</dict>
-				<key>2</key>
+				<key>3</key>
 				<dict>
 					<key>name</key>
 					<string>constant.other.language.orgmode</string>
 				</dict>
-				<key>3</key>
+				<key>4</key>
 				<dict>
 					<key>name</key>
 					<string>string.other.header-args.orgmode</string>
 				</dict>
 			</dict>
+			<key>contentName</key>
+			<string>markup.raw.block.orgmode</string>
 			<key>end</key>
-			<string>#\+(END_SRC)$</string>
+			<string>#\+(END_\2)$</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>
@@ -381,6 +383,12 @@
 					<string>_[^_]+_</string>
 					<key>name</key>
 					<string>markup.underline.orgmode</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>([~=]).+?\1</string>
+					<key>name</key>
+					<string>markup.raw.inline.orgmode</string>
 				</dict>
 				<dict>
 					<key>captures</key>

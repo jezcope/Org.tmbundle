@@ -12,8 +12,8 @@ Please use/abuse/modify it under the terms of the [[http://choosealicense.com/li
 - [X] *Bold*
 - [X] /Italics/
 - [X] _Underline_
-- [ ] ~Code~
-- [ ] =Verbatim=
+- [X] ~Code~
+- [X] =Verbatim=
 - [X] Comments
 - [X] Quote (#+BEGIN/END_QUOTE)
 - [X] Bullet lists

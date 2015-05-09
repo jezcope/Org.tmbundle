@@ -78,12 +78,13 @@ patterns:
   patterns:
   - include: source.lisp
 - name: meta.block.source.other.orgmode
-  begin: '#\+(BEGIN_SRC)(?:\s+([\w-]+)?\s*(.*))?$'
-  end: '#\+(END_SRC)$'
+  contentName: markup.raw.block.orgmode
+  begin: '#\+(BEGIN_(SRC|EXAMPLE))(?:\s+([\w-]+)?\s*(.*))?$'
+  end: '#\+(END_\2)$'
   beginCaptures:
     '1': {name: keyword.control.block.orgmode}
-    '2': {name: constant.other.language.orgmode}
-    '3': {name: string.other.header-args.orgmode}
+    '3': {name: constant.other.language.orgmode}
+    '4': {name: string.other.header-args.orgmode}
   endCaptures:
     '1': {name: keyword.control.block.orgmode}
 - name: meta.pragma.options.orgmode
@@ -112,6 +113,8 @@ repository:
       match: '\*[^*]+\*'
     - name: markup.underline.orgmode
       match: '_[^_]+_'
+    - name: markup.raw.inline.orgmode
+      match: '([~=]).+?\1'
     - name: meta.link.orgmode
       match: '\[\[([^\]]*)\]\[([^\]]*)\]\]'
       captures:

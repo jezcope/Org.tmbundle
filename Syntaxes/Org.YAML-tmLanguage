@@ -129,6 +129,20 @@ patterns:
     captures:
       '1': {name: variable.parameter.option.orgmode}
       '2': {name: string.other.option.orgmode}
+- name: meta.pragma.call.orgmode
+  begin: '#\+(CALL):\s+([A-Za-z-]+)(?:\[([^\]]*)\])?\(?'
+  end: '\)?([^)]*)$'
+  beginCaptures:
+    '1': {name: keyword.control.pragma.orgmode}
+    '2': {name: entity.name.function.orgmode}
+    '3': {name: string.other.header-args.orgmode}
+  endCaptures:
+    '1': {name: string.other.header-args.orgmode}
+  patterns:
+  - name: meta.assignment.orgmode
+    match: '(\w+)='
+    captures:
+      '1': {name: variable.parameter.header-args.orgmode}
 - name: meta.pragma.orgmode
   match: '^#\+([a-zA-Z_-]+): ?(.*)$'
   captures:

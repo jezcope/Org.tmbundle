@@ -15,6 +15,8 @@ patterns:
     '1': {name: keyword.operator.heading.orgmode}
   patterns:
   - include: '#heading-inline'
+- name: meta.separator.orgmode
+  match: '^-{5,}$'
 - name: meta.list.definition.orgmode
   begin: '^\s*([-+])\s+(.*?)\s+::'
   end: '$'

@@ -39,6 +39,12 @@
 			</array>
 		</dict>
 		<dict>
+			<key>match</key>
+			<string>^-{5,}$</string>
+			<key>name</key>
+			<string>meta.separator.orgmode</string>
+		</dict>
+		<dict>
 			<key>begin</key>
 			<string>^\s*([-+])\s+(.*?)\s+::</string>
 			<key>beginCaptures</key>
@@ -51,7 +57,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>markup.bold.definitiol.orgmode</string>
+					<string>markup.bold.definition.orgmode</string>
 				</dict>
 			</dict>
 			<key>end</key>

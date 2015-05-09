@@ -22,12 +22,14 @@ Please use/abuse/modify it under the terms of the [[http://choosealicense.com/li
   - [X] Ordered
   - [X] Definition
 - [X] LaTeX blocks
+- [ ] HTML blocks
 - [X] Links
 - [X] Source code blocks
   - [X] Generic
   - [X] Ruby
   - [X] Python
   - [X] elisp
+- [X] Horizontal rules
 - [X] Property drawers
 - [X] File-level options & metadata
 - [X] Inline elements within block elements

@@ -44,7 +44,18 @@ patterns:
     '1': {name: keyword.control.block.orgmode}
   patterns:
   - include: text.tex.latex
-- name: markup.comment.pragma.orgmode
+- name: meta.pragma.options.orgmode
+  begin: '#\+(OPTIONS):'
+  end: '$'
+  beginCaptures:
+    '1': {name: keyword.control.pragma.orgmode}
+  patterns:
+  - name: meta.option.orgmode
+    match: '([^\s]+):([^\s]+)'
+    captures:
+      '1': {name: variable.parameter.option.orgmode}
+      '2': {name: string.other.option.orgmode}
+- name: meta.pragma.orgmode
   match: '^#\+([a-zA-Z_-]+): ?(.*)$'
   captures:
     '1': {name: keyword.control.pragma.orgmode}
@@ -59,6 +70,11 @@ repository:
       match: '\*[^*]+\*'
     - name: markup.underline.orgmode
       match: '_[^_]+_'
+    - name: meta.link.orgmode
+      match: '\[\[([^\]]*)\]\[([^\]]*)\]\]'
+      captures:
+        '1': {name: markup.underline.link.orgmode}
+        '2': {name: string.other.link.orgmode}
   list-inline:
     patterns:
     - name: keyword.operator.checkbox.orgmode

@@ -398,25 +398,25 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>/[^/]+/</string>
+					<string>(?&lt;=^|\s)/[^/]+/(?=$|\s)</string>
 					<key>name</key>
 					<string>markup.italic.orgmode</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\*[^*]+\*</string>
+					<string>(?&lt;=^|\s)\*[^*]+\*(?=$|\s)</string>
 					<key>name</key>
 					<string>markup.bold.orgmode</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>_[^_]+_</string>
+					<string>(?&lt;=^|\s)_[^_]+_(?=$|\s)</string>
 					<key>name</key>
 					<string>markup.underline.orgmode</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>([~=]).+?\1</string>
+					<string>(?&lt;=^|\s)([~=]).+?\1(?=$|\s)</string>
 					<key>name</key>
 					<string>markup.raw.inline.orgmode</string>
 				</dict>

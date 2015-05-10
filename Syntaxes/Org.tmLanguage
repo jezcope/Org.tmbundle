@@ -13,33 +13,28 @@
 	<array>
 		<dict>
 			<key>begin</key>
-			<string>^((\*+)\s*([A-Z_]{2,})?\s+)</string>
+			<string>^(\*+)\s*([A-Z_]{2,})?\s+</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>markup.heading.orgmode</string>
+					<string>punctuation.definition.heading.orgmode</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.operator.heading.orgmode</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.todo.orgmode</string>
+					<string>keyword.other.todo.orgmode</string>
 				</dict>
 			</dict>
 			<key>comment</key>
 			<string>Outline headings</string>
 			<key>contentName</key>
-			<string>markup.heading.orgmode</string>
+			<string>entity.name.section.orgmode</string>
 			<key>end</key>
-			<string>$</string>
+			<string>\s*$\n?</string>
 			<key>name</key>
-			<string>meta.heading.orgmode</string>
+			<string>markup.heading.orgmode</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -451,7 +446,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>#\+(CALL):\s+([A-Za-z-]+)(?:\[([^\]]*)\])?\(?</string>
+			<string>#\+(CALL):\s+[A-Za-z-]+(?:\[([^\]]*)\])?\(?</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -460,11 +455,6 @@
 					<string>keyword.control.pragma.orgmode</string>
 				</dict>
 				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.function.orgmode</string>
-				</dict>
-				<key>3</key>
 				<dict>
 					<key>name</key>
 					<string>string.other.header-args.orgmode</string>

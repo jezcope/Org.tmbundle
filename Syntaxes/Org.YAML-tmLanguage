@@ -7,14 +7,13 @@ uuid: e4fb86ca-d96b-4094-ac47-d14dbae2d088
 
 patterns:
 - comment: Outline headings
-  name: meta.heading.orgmode
-  contentName: markup.heading.orgmode
-  begin: '^((\*+)\s*([A-Z_]{2,})?\s+)'
-  end: '$'
+  name: markup.heading.orgmode
+  contentName: entity.name.section.orgmode
+  begin: '^(\*+)\s*([A-Z_]{2,})?\s+'
+  end: '\s*$\n?'
   beginCaptures:
-    '1': {name: markup.heading.orgmode}
-    '2': {name: keyword.operator.heading.orgmode}
-    '3': {name: entity.name.tag.todo.orgmode}
+    '1': {name: punctuation.definition.heading.orgmode}
+    '2': {name: keyword.other.todo.orgmode}
   patterns:
   - include: '#heading-inline'
 - name: meta.separator.orgmode
@@ -132,12 +131,11 @@ patterns:
       '1': {name: variable.parameter.option.orgmode}
       '2': {name: string.other.option.orgmode}
 - name: meta.pragma.call.orgmode
-  begin: '#\+(CALL):\s+([A-Za-z-]+)(?:\[([^\]]*)\])?\(?'
+  begin: '#\+(CALL):\s+[A-Za-z-]+(?:\[([^\]]*)\])?\(?'
   end: '\)?([^)]*)$'
   beginCaptures:
     '1': {name: keyword.control.pragma.orgmode}
-    '2': {name: entity.name.function.orgmode}
-    '3': {name: string.other.header-args.orgmode}
+    '2': {name: string.other.header-args.orgmode}
   endCaptures:
     '1': {name: string.other.header-args.orgmode}
   patterns:

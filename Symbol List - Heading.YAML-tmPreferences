@@ -1,0 +1,16 @@
+# [PackageDev] target_format: plist, ext: tmPreferences
+---
+name: 'Symbol list: Heading'
+scope: text.orgmode markup.heading.orgmode
+settings:
+  showInSymbolList: 1
+  symbolTransformation: |
+    s/\s*:.+:\s\z//g;       # strip trailing space and tags
+    s/(?<=\*)\*/  /g;       # change header level to an indent
+    s/^\*( *)\s+(.*)/$1$2/; # strip first * and space before title
+  uuid: 47d1f538-f129-49ec-ae5a-8ad94b83d46f
+...
+
+# Local Variables:
+# mode: yaml
+# End:

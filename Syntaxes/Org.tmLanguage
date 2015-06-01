@@ -128,7 +128,7 @@
 			<key>match</key>
 			<string>^#[^+].*$</string>
 			<key>name</key>
-			<string>markup.comment.orgmode</string>
+			<string>comment.line.number-sign.orgmode</string>
 		</dict>
 		<dict>
 			<key>begin</key>

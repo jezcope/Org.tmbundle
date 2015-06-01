@@ -40,7 +40,7 @@ patterns:
   end: '^#\+(END_\2)$'
   endCaptures:
     '1': {name: keyword.control.block.orgmode}
-- name: markup.comment.orgmode
+- name: comment.line.number-sign.orgmode
   match: '^#[^+].*$'
 - name: meta.drawer.properties.orgmode
   begin: '^:(PROPERTIES):$'

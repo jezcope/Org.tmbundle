@@ -10,7 +10,7 @@ patterns:
   name: markup.heading.orgmode
   contentName: entity.name.section.orgmode
   begin: '^(\*+)\s*([A-Z_]{2,})?\s+'
-  end: '\s*$\n?'
+  end: '(?=\s*$\n?)'
   beginCaptures:
     '1': {name: punctuation.definition.heading.orgmode}
     '2': {name: keyword.other.todo.orgmode}

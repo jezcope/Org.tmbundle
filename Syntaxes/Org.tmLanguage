@@ -13,7 +13,12 @@
 	<array>
 		<dict>
 			<key>begin</key>
-			<string>^(\*+)\s*([A-Z_]{2,})?\s*(?=\s+[A-Za-z]+)</string>
+			<string>(?x)
+^(\*+)               # leading stars
+\s*([A-Z_]{2,})?     # todo keywords
+\s*(\[\#[A-Ca-c]\])? # priority
+\s*(?=\s+[A-Za-z]+)  # expected heading text
+</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -25,6 +30,11 @@
 				<dict>
 					<key>name</key>
 					<string>keyword.other.todo.orgmode</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>constant.other.priority.orgmode</string>
 				</dict>
 			</dict>
 			<key>comment</key>

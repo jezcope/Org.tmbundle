@@ -9,7 +9,7 @@ patterns:
 - comment: Outline headings
   name: markup.heading.orgmode
   contentName: entity.name.section.orgmode
-  begin: '^(\*+)\s*([A-Z_]{2,})?\s+'
+  begin: '^(\*+)\s*([A-Z_]{2,})?\s*(?=\s+[A-Za-z]+)'
   end: '(?=\s*$\n?)'
   beginCaptures:
     '1': {name: punctuation.definition.heading.orgmode}

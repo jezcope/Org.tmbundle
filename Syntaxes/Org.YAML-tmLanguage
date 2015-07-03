@@ -34,10 +34,10 @@ patterns:
   patterns:
   - include: '#list-inline'
 - name: markup.quote.orgmode
-  begin: '^#\+(BEGIN_(QUOTE|VERSE|CENTER))$'
+  begin: '(?i)^#\+(BEGIN_(QUOTE|VERSE|CENTER))$'
   beginCaptures:
     '1': {name: keyword.control.block.orgmode}
-  end: '^#\+(END_\2)$'
+  end: '(?i)^#\+(END_\2)$'
   endCaptures:
     '1': {name: keyword.control.block.orgmode}
 - name: comment.line.number-sign.orgmode
@@ -59,8 +59,8 @@ patterns:
   endCaptures:
     '1': {name: keyword.control.drawer.orgmode}
 - name: meta.block.latex.orgmode
-  begin: '#\+(BEGIN_LaTeX)$'
-  end: '#\+(END_LaTeX)$'
+  begin: '(?i)#\+(BEGIN_LaTeX)$'
+  end: '(?i)#\+(END_LaTeX)$'
   beginCaptures:
     '1': {name: keyword.control.block.orgmode}
   endCaptures:
@@ -68,8 +68,8 @@ patterns:
   patterns:
   - include: text.tex.latex
 - name: meta.block.html.orgmode
-  begin: '#\+(BEGIN_HTML)$'
-  end: '#\+(END_HTML)$'
+  begin: '(?i)#\+(BEGIN_HTML)$'
+  end: '(?i)#\+(END_HTML)$'
   beginCaptures:
     '1': {name: keyword.control.block.orgmode}
   endCaptures:
@@ -77,8 +77,8 @@ patterns:
   patterns:
   - include: text.html.basic
 - name: meta.block.source.python.orgmode
-  begin: '#\+(BEGIN_SRC)\s+(python)\s*(.*)$'
-  end: '#\+(END_SRC)$'
+  begin: '(?i)#\+(BEGIN_SRC)\s+(python)\s*(.*)$'
+  end: '(?i)#\+(END_SRC)$'
   beginCaptures:
     '1': {name: keyword.control.block.orgmode}
     '2': {name: constant.other.language.orgmode}
@@ -88,8 +88,8 @@ patterns:
   patterns:
   - include: source.python
 - name: meta.block.source.ruby.orgmode
-  begin: '#\+(BEGIN_SRC)\s+(ruby)\s*(.*)$'
-  end: '#\+(END_SRC)$'
+  begin: '(?i)#\+(BEGIN_SRC)\s+(ruby)\s*(.*)$'
+  end: '(?i)#\+(END_SRC)$'
   beginCaptures:
     '1': {name: keyword.control.block.orgmode}
     '2': {name: constant.other.language.orgmode}
@@ -99,8 +99,8 @@ patterns:
   patterns:
   - include: source.ruby
 - name: meta.block.source.lisp.orgmode
-  begin: '#\+(BEGIN_SRC)\s+((?:emacs-)?lisp)\s*(.*)$'
-  end: '#\+(END_SRC)$'
+  begin: '(?i)#\+(BEGIN_SRC)\s+((?:emacs-)?lisp)\s*(.*)$'
+  end: '(?i)#\+(END_SRC)$'
   beginCaptures:
     '1': {name: keyword.control.block.orgmode}
     '2': {name: constant.other.language.orgmode}
@@ -111,8 +111,8 @@ patterns:
   - include: source.lisp
 - name: meta.block.source.other.orgmode
   contentName: markup.raw.block.orgmode
-  begin: '#\+(BEGIN_(SRC|EXAMPLE))(?:\s+([\w-]+)?\s*(.*))?$'
-  end: '#\+(END_\2)$'
+  begin: '(?i)#\+(BEGIN_(SRC|EXAMPLE))(?:\s+([\w-]+)?\s*(.*))?$'
+  end: '(?i)#\+(END_\2)$'
   beginCaptures:
     '1': {name: keyword.control.block.orgmode}
     '3': {name: constant.other.language.orgmode}

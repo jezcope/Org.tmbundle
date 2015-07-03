@@ -112,7 +112,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^#\+(BEGIN_(QUOTE|VERSE|CENTER))$</string>
+			<string>(?i)^#\+(BEGIN_(QUOTE|VERSE|CENTER))$</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -122,7 +122,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>^#\+(END_\2)$</string>
+			<string>(?i)^#\+(END_\2)$</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>
@@ -197,7 +197,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>#\+(BEGIN_LaTeX)$</string>
+			<string>(?i)#\+(BEGIN_LaTeX)$</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -207,7 +207,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>#\+(END_LaTeX)$</string>
+			<string>(?i)#\+(END_LaTeX)$</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>
@@ -228,7 +228,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>#\+(BEGIN_HTML)$</string>
+			<string>(?i)#\+(BEGIN_HTML)$</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -238,7 +238,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>#\+(END_HTML)$</string>
+			<string>(?i)#\+(END_HTML)$</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>
@@ -259,7 +259,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>#\+(BEGIN_SRC)\s+(python)\s*(.*)$</string>
+			<string>(?i)#\+(BEGIN_SRC)\s+(python)\s*(.*)$</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -279,7 +279,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>#\+(END_SRC)$</string>
+			<string>(?i)#\+(END_SRC)$</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>
@@ -300,7 +300,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>#\+(BEGIN_SRC)\s+(ruby)\s*(.*)$</string>
+			<string>(?i)#\+(BEGIN_SRC)\s+(ruby)\s*(.*)$</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -320,7 +320,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>#\+(END_SRC)$</string>
+			<string>(?i)#\+(END_SRC)$</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>
@@ -341,7 +341,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>#\+(BEGIN_SRC)\s+((?:emacs-)?lisp)\s*(.*)$</string>
+			<string>(?i)#\+(BEGIN_SRC)\s+((?:emacs-)?lisp)\s*(.*)$</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -361,7 +361,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>#\+(END_SRC)$</string>
+			<string>(?i)#\+(END_SRC)$</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>
@@ -382,7 +382,48 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>#\+(BEGIN_(SRC|EXAMPLE))(?:\s+([\w-]+)?\s*(.*))?$</string>
+			<string>(?i)#\+(BEGIN_SRC)\s+(sh)\s*(.*)$</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.block.orgmode</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>constant.other.language.orgmode</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>string.other.header-args.orgmode</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?i)#\+(END_SRC)$</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.block.orgmode</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.block.source.shell.orgmode</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>source.shell</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>(?i)#\+(BEGIN_(SRC|EXAMPLE))(?:\s+([\w-]+)?\s*(.*))?$</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -404,7 +445,7 @@
 			<key>contentName</key>
 			<string>markup.raw.block.orgmode</string>
 			<key>end</key>
-			<string>#\+(END_\2)$</string>
+			<string>(?i)#\+(END_\2)$</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>

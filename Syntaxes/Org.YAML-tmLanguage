@@ -9,11 +9,17 @@ patterns:
 - comment: Outline headings
   name: markup.heading.orgmode
   contentName: entity.name.section.orgmode
-  begin: '^(\*+)\s*([A-Z_]{2,})?\s+'
-  end: '\s*$\n?'
+  begin: |
+    (?x)
+    ^(\*+)               # leading stars
+    \s*([A-Z_]{2,})?     # todo keywords
+    \s*(\[\#[A-Ca-c]\])? # priority
+    \s*(?=\s+[A-Za-z]+)  # expected heading text
+  end: '(?=\s*$\n?)'
   beginCaptures:
     '1': {name: punctuation.definition.heading.orgmode}
     '2': {name: keyword.other.todo.orgmode}
+    '3': {name: constant.other.priority.orgmode}
   patterns:
   - include: '#heading-inline'
 - name: meta.separator.orgmode

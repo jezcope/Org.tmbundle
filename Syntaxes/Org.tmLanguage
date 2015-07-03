@@ -372,6 +372,47 @@
 		</dict>
 		<dict>
 			<key>begin</key>
+			<string>(?i)#\+(BEGIN_SRC)\s+(sh)\s*(.*)$</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.block.orgmode</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>constant.other.language.orgmode</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>string.other.header-args.orgmode</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?i)#\+(END_SRC)$</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.block.orgmode</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.block.source.shell.orgmode</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>source.shell</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
 			<string>(?i)#\+(BEGIN_(SRC|EXAMPLE))(?:\s+([\w-]+)?\s*(.*))?$</string>
 			<key>beginCaptures</key>
 			<dict>

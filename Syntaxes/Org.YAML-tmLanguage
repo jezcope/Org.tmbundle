@@ -109,6 +109,17 @@ patterns:
     '1': {name: keyword.control.block.orgmode}
   patterns:
   - include: source.lisp
+- name: meta.block.source.shell.orgmode
+  begin: '(?i)#\+(BEGIN_SRC)\s+(sh)\s*(.*)$'
+  end: '(?i)#\+(END_SRC)$'
+  beginCaptures:
+    '1': {name: keyword.control.block.orgmode}
+    '2': {name: constant.other.language.orgmode}
+    '3': {name: string.other.header-args.orgmode}
+  endCaptures:
+    '1': {name: keyword.control.block.orgmode}
+  patterns:
+  - include: source.shell
 - name: meta.block.source.other.orgmode
   contentName: markup.raw.block.orgmode
   begin: '(?i)#\+(BEGIN_(SRC|EXAMPLE))(?:\s+([\w-]+)?\s*(.*))?$'

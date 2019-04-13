@@ -17,7 +17,7 @@
 ^(\*+)               # leading stars
 \s*([A-Z_]{2,})?     # todo keywords
 \s*(\[\#[A-Ca-c]\])? # priority
-\s*(?=\s+[A-Za-z]+)  # expected heading text
+\s*(?=\s+[A-Za-z0-9]+)  # expected heading text
 </string>
 			<key>beginCaptures</key>
 			<dict>
@@ -581,7 +581,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>:([^:]*)(?=:)</string>
+					<string>:([^:^\s]*)(?=:)</string>
 					<key>name</key>
 					<string>meta.keyword.orgmode</string>
 				</dict>

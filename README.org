@@ -1,5 +1,7 @@
 * org-sublime
 
+*N.B. I no longer have any devices that will run Textastic for iOS or use anythings else that requires this, so it's unmaintained. Please feel free to fork and update it if it's useful for you though!*
+
 This is a /very/ basic TextMate/Sublime Text syntax for [[http://orgmode.org/][Emacs org-mode]] files. I created it mostly so that I can get syntax highlighting for my org-mode files in [[http://www.textasticapp.com/][Textastic for iOS]].  It started life as a TextMate =.tmbundle= but I'm now using Sublime Text to test/develop it.
 
 Not all colour schemes include rules for all of the used ~markup.*~ elements, particularly the headings.  Those that do include:
